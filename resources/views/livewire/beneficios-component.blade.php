@@ -25,7 +25,12 @@
             </div>
     
             <div>
-                <button class="font-bold text-sm py-3 px-4 rounded text-center bg-secondary text-white hover:bg-cyan-700 w-full" wire:click="$set('favorites', true)">VER FAVORITOS</button>
+                @if (session('customer'))
+                    <button class="font-bold text-sm py-3 px-4 rounded text-center bg-secondary text-white hover:bg-cyan-700 w-full" wire:click="$set('favorites', true)">VER FAVORITOS</button>
+                @else
+                    <a href="{{route('session.index')}}" class="font-bold text-sm py-3 px-4 rounded text-center bg-secondary text-white hover:bg-cyan-700 w-full block">VER FAVORITOS</a>
+                @endif
+                    
             </div>
         </div>
     </div>
@@ -42,10 +47,16 @@
                     <div class="bg-primary px-6 py-2 flex justify-between items-center">
                         <h2 class="text-white uppercase font-bold">{{$voucher->brand->name}}</h2>
 
-                        @if ($voucher->check)
-                            <i wire:click="favorites({{$voucher}})" class="fas fa-star text-yellow-400 cursor-pointer"></i>
+                        @if (session('customer'))
+                        
+                            @if ($voucher->check)
+                                <i wire:click="favorites({{$voucher}})" class="fas fa-star text-yellow-400 cursor-pointer"></i>
+                            @else
+                                <i wire:click="favorites({{$voucher}})" class="fas fa-star text-white cursor-pointer"></i>
+                            @endif
+
                         @else
-                            <i wire:click="favorites({{$voucher}})" class="fas fa-star text-white cursor-pointer"></i>
+                            <a href="{{route('session.index')}}"><i class="fas fa-star text-white cursor-pointer"></i></a>
                         @endif
                     </div>
 

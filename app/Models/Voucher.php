@@ -28,7 +28,12 @@ class Voucher extends Model
 
     //Atributos
     public function getCheckAttribute(){
-        return $this->customers->contains(session('customer')->id);
+        if (session('customer')) {
+            return $this->customers->contains(session('customer')->id);
+        }else{
+            return false;
+        }
+        
     }
    
 

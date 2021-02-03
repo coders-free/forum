@@ -17,8 +17,8 @@ class SessionRut
     public function handle(Request $request, Closure $next)
     {
 
-        if(!session('customer')){
-            return redirect()->route('session.index');
+        if(session('customer')){
+            return redirect('/');
         }
 
         return $next($request);

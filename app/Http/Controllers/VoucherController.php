@@ -13,14 +13,16 @@ use App\Models\CuponAsignado;
 class VoucherController extends Controller
 {
     public function show(Voucher $voucher){
-
-        VoucherTrack::create([
-            'id_cliente'    => session('customer')->id_cliente,
-            'rut'           =>  session('customer')->rut,
-            'accion'        => 'OPEN',
-            'modulo'        => 'BENEFICIOS',
-            'fecha_track'   => Carbon::now()->format('d-m-Y')
-        ]);
+        if (session('customer')) {
+        
+            VoucherTrack::create([
+                'id_cliente'    => session('customer')->id_cliente,
+                'rut'           =>  session('customer')->rut,
+                'accion'        => 'OPEN',
+                'modulo'        => 'BENEFICIOS',
+                'fecha_track'   => Carbon::now()->format('d-m-Y')
+            ]);
+        }
 
         return view('vouchers.show', compact('voucher'));
     }

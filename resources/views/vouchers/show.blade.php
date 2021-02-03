@@ -42,12 +42,26 @@
                 <img src="{{asset('img/logo/logo_Trasnvip.png')}}" alt="">
 
                 @if ($voucher->url)
-                    <a class="btn btn-secondary block" href="{{$voucher->url}}" target="_blank">{{$voucher->text_button}}</a>
+
+                    @if (session('customer'))
+                        <a class="btn btn-secondary block" href="{{$voucher->url}}" target="_blank">{{$voucher->text_button}}</a>
+                    @else
+                        <a class="btn btn-secondary block" href="{{route('session.index')}}">{{$voucher->text_button}}</a>
+                    @endif
+
                 @else
-                    <form action="{{route('vouchers.exchange', $voucher)}}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-secondary w-full">{{$voucher->text_button}}</button>
-                    </form>
+                    @if (session('customer'))
+                    
+                        <form action="{{route('vouchers.exchange', $voucher)}}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-secondary w-full">{{$voucher->text_button}}</button>
+                        </form>
+
+                    @else
+
+                        <a href="{{route('session.index')}}" class="btn btn-secondary w-full block">{{$voucher->text_button}}</a>
+                        
+                    @endif
                 @endif
 
             </div>
