@@ -17,7 +17,7 @@ class CreateVouchersTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('brand_id');
-            $table->foreign('brand_id')->references('id')->on('brands');
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade')->onUpdate('cascade');
 
             $table->string('voucher_type');
 

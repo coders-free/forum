@@ -20,7 +20,7 @@ class CreateVideosTable extends Migration
 
             $table->unsignedBigInteger('voucher_id');
 
-            $table->foreign('voucher_id')->references('id')->on('vouchers');
+            $table->foreign('voucher_id')->references('id')->on('vouchers')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

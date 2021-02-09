@@ -17,10 +17,10 @@ class CreateFavoritesTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('voucher_id');
-            $table->foreign('voucher_id')->references('id')->on('vouchers');
+            $table->foreign('voucher_id')->references('id')->on('vouchers')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('customer_id');
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

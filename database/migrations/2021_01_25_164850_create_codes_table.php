@@ -18,10 +18,10 @@ class CreateCodesTable extends Migration
             $table->string('value')->unique();
 
             $table->unsignedBigInteger('voucher_id');
-            $table->foreign('voucher_id')->references('id')->on('vouchers');
+            $table->foreign('voucher_id')->references('id')->on('vouchers')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('customer_id')->nullable();
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });
