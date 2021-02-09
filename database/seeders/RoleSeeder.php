@@ -21,9 +21,9 @@ class RoleSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Victor Arana Flores',
-            'email' => 'victor.aranaf92@gmail.com',
-            'password' => bcrypt('12345678')
+            'name' => 'Claudio Saavedra',
+            'email' => 'claudio.saavedra@customertrigger.com',
+            'password' => bcrypt('p3s1c$811')
         ])->assignRole('admin');
     }
 }

@@ -14,4 +14,9 @@ class Code extends Model
     public function customer(){
         return $this->belongsTo(Customer::class);
     }
+
+    public function voucher(){
+        return $this->belongsTo(Voucher::class);
+    }
+
 }

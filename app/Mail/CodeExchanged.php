@@ -31,6 +31,7 @@ class CodeExchanged extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.code-exchanged');
+
+        return $this->view('mail.code-exchanged')->subject(session('customer')->name." Código a Canjear");
     }
 }
