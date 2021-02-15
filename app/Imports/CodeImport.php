@@ -37,7 +37,8 @@ class CodeImport implements ToModel, WithCustomCsvSettings, WithUpserts, WithHea
     public function getCsvSettings(): array
     {
         return [
-            'delimiter' => ";"
+            'delimiter' => ";",
+            'input_encoding' => 'UTF-16'
         ];
     }
 

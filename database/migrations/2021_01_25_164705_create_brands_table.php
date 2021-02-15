@@ -17,7 +17,7 @@ class CreateBrandsTable extends Migration
             $table->id();
 
             $table->string('name')->unique();
-            $table->string('url_logo');
+            $table->string('url_logo')->nullable();
 
             $table->unsignedBigInteger('category_id');
 

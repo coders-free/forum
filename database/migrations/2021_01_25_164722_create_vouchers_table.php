@@ -31,7 +31,7 @@ class CreateVouchersTable extends Migration
 
             $table->string('url')->nullable();
 
-            $table->string('text_button');
+            $table->string('text_button')->nullable();
 
             $table->string('image')->nullable();
 

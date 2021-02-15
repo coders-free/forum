@@ -27,7 +27,8 @@ class BrandImport implements ToModel, WithCustomCsvSettings, WithUpserts, WithHe
     public function getCsvSettings(): array
     {
         return [
-            'delimiter' => ";"
+            'delimiter' => ";",
+            'input_encoding' => 'UTF-16'
         ];
     }
 

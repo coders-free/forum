@@ -28,8 +28,8 @@ class VoucherImport implements ToModel, WithCustomCsvSettings, WithHeadingRow
         return new Voucher([
             'brand_id'              => $brand->id,
             'voucher_type'          => $row['tipo_cupon'],
-            'registration_date'     => Carbon::createFromFormat( 'd-m-Y', $row['fecha_registro']),
-            'expiration_date'       => Carbon::createFromFormat( 'd-m-Y', $row['fecha_vencimiento']),
+            'registration_date'     => $row['fecha_registro'],
+            'expiration_date'       => $row['fecha_vencimiento'],
             'title'                 => $row['titulo'],
             'description'           => $row['descripcion_cupon'],
             'description2'          => $row['descripcion_2'],
@@ -42,7 +42,8 @@ class VoucherImport implements ToModel, WithCustomCsvSettings, WithHeadingRow
     public function getCsvSettings(): array
     {
         return [
-            'delimiter' => ";"
+            'delimiter' => ";",
+            'input_encoding' => 'UTF-16'
         ];
     }
 }

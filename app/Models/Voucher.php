@@ -11,7 +11,7 @@ class Voucher extends Model
     use HasFactory;
 
     /* protected $guarded = ['id', 'created_at', 'updated_at']; */
-    protected $fillable = ['brand_id', 'registration_date', 'expiration_date', 'description', 'description2', 'url', 'text_button', 'image'];
+    protected $fillable = ['brand_id', 'voucher_type', 'registration_date', 'expiration_date', 'title','description', 'description2', 'url', 'text_button', 'image'];
 
     protected $casts = [
         'registration_date' => 'datetime:Y-m-d',
