@@ -1,7 +1,7 @@
 <x-forum-layout>
     <section class="bg-primary relative">
         
-        <div class="absolute w-1/2 h-64">
+        <div class="md:absolute md:w-1/2 h-64">
             {{-- <img class="w-full h-full object-cover object-center" src="{{Storage::url($voucher->image)}}" alt=""> --}}
             @if ($voucher->image)
                 <img class="w-full h-full object-cover object-center" src="{{$voucher->image}}" alt="">
@@ -11,9 +11,9 @@
         </div>
 
         {{-- grid --}}
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex h-64 items-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex md:h-64 items-center">
 
-            <article class="pl-4 py-8 w-1/2 ml-auto">
+            <article class="pl-4 py-8 md:w-1/2 md:ml-auto">
                 <h1 class="text-xl text-white font-bold uppercase mb-6">{{$voucher->title}}</h1>
 
                 <div class="text-white mb-6">
@@ -27,9 +27,9 @@
 
     </section>
 
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 grid grid-cols-4 gap-6 mt-8 items-start">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 grid md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8 items-start">
 
-        <article class="col-span-3 rounded overflow-hidden shadow-lg flex flex-col bg-white">
+        <article class="md:col-span-2 lg:col-span-3 rounded overflow-hidden shadow-lg flex flex-col bg-white">
             <div class="px-8 py-6">
                 <h1 class="text-xl text-primary uppercase font-bold mb-4">¿Cómo puedes disfrutarlo?</h1>
                 {!!$voucher->description2!!}
