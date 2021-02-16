@@ -8,6 +8,9 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+        <!-- Favicon -->
+        <link rel="icon" href="{{asset('img/favicon.png')}}" sizes="125x88" />
         
         {{-- Tailwind --}}
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -46,6 +49,9 @@
 
                     <div class="flex justify-center mt-3">
                         <button class="btn btn-secondary" type="submit">Iniciar sesión</button>
+                    </div>
+                    <div class="flex justify-center mt-3">
+                        <a href="/" class="btn btn-secondary">Volver</a>
                     </div>
 
                 </form>
