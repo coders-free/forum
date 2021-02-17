@@ -18,10 +18,22 @@
             <img class="img-fluid" src="https://cdn.pixabay.com/photo/2020/12/10/20/40/color-5821297_960_720.jpg" alt="">
         @endif
       </div>
+      <div class="container">
+        <div class="container"><h2 style="color:#2b3e7f">Estimado(a) {{session('customer')->name}}</h2></div>
+      </div>
+    <div class="container">
+      <div class="container"><h2 style="color:#2b3e7f">{{$code->voucher->title}}</h2></div>
+      <div class="container"><h3 style="color:#2b3e7f">Beneficio valido hasta: {{$code->voucher->expiration_date->format('d/m/Y')}}</h3></div>
+    </div>
+    <div class="container">
+      <div class="container"><h2 style="color:#0094d5">¿CÓMO PUEDES DISFRUTARLO?</h2></div>
+      <div class="container"><h3 style="color:#2b3e7f">{{$code->voucher->description2}}</h3></div>
+    </div>
+    <div class="container">
+      <div class="container"><h2 style="color:#0094d5">Código a canjear</h2></div>
+      <div class="container"><h3 style="color:#2b3e7f">{{$code->value}}</h3></div>
+    </div>
     
-    <h1>Código a canjear</h1>
-    <p>{{$code->value}}</p>
-    {{session('customer')->name}}
 
     <!-- Optional JavaScript; choose one of the two! -->
 

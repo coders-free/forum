@@ -54,14 +54,16 @@ class VoucherController extends Controller
 
                 $mail = new CodeExchanged($code);
                 Mail::to(session('customer')->email)->send($mail);
+                $correo = session('customer')->email;
 
-                return redirect()->route('vouchers.show', $voucher)->with('info', 'El código se envío a su correo electrónico');
+                return redirect()->route('vouchers.show', $voucher)->with('info', 'El código se envío a su correo electrónico '.$correo);
 
             }elseif ($code->customer_id == session('customer')->id) {
                 $mail = new CodeExchanged($code);
                 Mail::to(session('customer')->email)->send($mail);
+                $correo = session('customer')->email;
 
-                return redirect()->route('vouchers.show', $voucher)->with('info', 'El código se envío a su correo electrónico');
+                return redirect()->route('vouchers.show', $voucher)->with('info', 'El código se envío a su correo electrónico '.$correo);
             }
             
         }
