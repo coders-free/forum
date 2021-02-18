@@ -1,6 +1,11 @@
 <div>
     <div class="bg-primary">
-        <div class="container2 py-6 lg:py-3 grid grid-cols-1 lg:grid-cols-5 gap-2 items-center">
+        @if (session('customer'))
+            <div class="container2 py-6 lg:py-3 grid grid-cols-1 lg:grid-cols-6 gap-2 items-center">
+        @else
+            <div class="container2 py-6 lg:py-3 grid grid-cols-1 lg:grid-cols-5 gap-2 items-center">
+        @endif
+        
 
             <div class="lg:col-span-2">
                 <input wire:model="search" placeholder="¿Qué estás buscando?" autocomplete="off" class="form-control w-full">
@@ -32,6 +37,14 @@
                 @endif
                     
             </div>
+
+            <div>
+                @if (session('customer'))
+                    <a href="{{route('contacto.index')}}" class="font-bold text-sm py-3 px-4 rounded text-center bg-secondary text-white hover:bg-cyan-700 w-full block">CONTACTO</a>
+                @endif
+                    
+            </div>
+
         </div>
     </div>
 

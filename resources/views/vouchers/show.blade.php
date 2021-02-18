@@ -38,7 +38,7 @@
 
         <div class="rounded overflow-hidden shadow-lg flex flex-col bg-white">
             <div class="px-6 py-4">
-                 <img src="{{$voucher->brand->url_logo}}" alt=""> 
+                {{-- <img src="{{$voucher->brand->url_logo}}" alt=""> --}} 
                 {{--<img src="{{asset('img/logo/logo_Trasnvip.png')}}" alt=""> --}}
 
                 @if ($voucher->url)
