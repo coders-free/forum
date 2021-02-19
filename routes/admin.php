@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\VoucherController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Livewire\AdminVoucher;
 use App\Http\Livewire\AdminCategorie;
 use App\Http\Livewire\AdminBrand;
@@ -11,9 +12,11 @@ use App\Http\Livewire\AdminBrand;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Livewire\AdminUsers;
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 Route::group(['middleware' => ['role:admin']], function () {
 
