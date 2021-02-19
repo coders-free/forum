@@ -20,6 +20,9 @@
                         <x-jet-nav-link href="{{ route('admin.vouchers.index') }}" :active="request()->routeIs('admin.vouchers.*')">
                             Beneficios
                         </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('admin.category.index') }}" :active="request()->routeIs('admin.category.*')">
+                            Categorias
+                        </x-jet-nav-link>
 
                         <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')">
                             Usuarios
@@ -156,6 +159,9 @@
             @role('admin')
                 <x-jet-responsive-nav-link href="{{ route('admin.vouchers.index') }}" :active="request()->routeIs('admin.vouchers.*')">
                     Beneficios
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('admin.vouchers.index') }}" :active="request()->routeIs('admin.vouchers.*')">
+                    Categorias
                 </x-jet-responsive-nav-link>
             @endrole
         </div>
