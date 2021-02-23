@@ -8,6 +8,7 @@ use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 
 class VoucherImport implements ToModel, WithCustomCsvSettings, WithHeadingRow
@@ -25,12 +26,15 @@ class VoucherImport implements ToModel, WithCustomCsvSettings, WithHeadingRow
             return null;
         }
 
+        $title = $row['titulo'];
+
         return new Voucher([
             'brand_id'              => $brand->id,
             'voucher_type'          => $row['tipo_cupon'],
             'registration_date'     => $row['fecha_registro'],
             'expiration_date'       => $row['fecha_vencimiento'],
-            'title'                 => $row['titulo'],
+            'title'                 => $title,
+            'slug'                  => Str::slug($title, '-'),
             'description'           => $row['descripcion_cupon'],
             'description2'          => $row['descripcion_2'],
             'url'                   => $row['url_boton'],

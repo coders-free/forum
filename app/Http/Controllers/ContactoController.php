@@ -14,7 +14,7 @@ class ContactoController extends Controller
 
     public function store(Request $request){
         $correo = new ContactoMailable($request->all());
-        Mail::to('claudiosaavedra@pesic.cl')->send($correo);
+        Mail::to('beneficios@kmsforum.cl')->send($correo);
 
         return redirect()->route('contacto.index')->with('info', 'Su consulta ha sido enviada con exito.');
     }

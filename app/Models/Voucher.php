@@ -11,12 +11,17 @@ class Voucher extends Model
     use HasFactory;
 
     /* protected $guarded = ['id', 'created_at', 'updated_at']; */
-    protected $fillable = ['brand_id', 'voucher_type', 'registration_date', 'expiration_date', 'title','description', 'description2', 'url', 'text_button', 'image'];
+    protected $fillable = ['brand_id', 'voucher_type', 'registration_date', 'expiration_date', 'title', 'slug','description', 'description2', 'url', 'text_button', 'image'];
 
     protected $casts = [
         'registration_date' => 'datetime:Y-m-d',
         'expiration_date' => 'datetime:Y-m-d',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     //Query Scopes
 

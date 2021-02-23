@@ -25,6 +25,7 @@ class CreateVouchersTable extends Migration
             $table->dateTime('expiration_date');
             
             $table->string('title');
+            $table->string('slug');
 
             $table->text('description');
             $table->text('description2');

@@ -31,7 +31,7 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script>
-        var datas = <?php echo json_encode($codes) ?>;
+        var datas = <?php echo json_encode($cupones_disponibles) ?>;
         var datas2= <?php echo json_encode($cupones_asignados) ?>;
         var datas3= <?php echo json_encode($inicios_de_sesion) ?>;
         var datas4= <?php echo json_encode($beneficios_open) ?>;
@@ -99,7 +99,7 @@
             min: 0,
             max: 200,
             title: {
-                text: 'Cupones de Hoy'
+                text: 'Cupones Disponibles en Plataforma'
             }
         },
 

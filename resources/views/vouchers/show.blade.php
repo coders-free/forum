@@ -44,7 +44,11 @@
                 @if ($voucher->url)
 
                     @if (session('customer'))
-                        <a class="btn btn-secondary block" href="{{$voucher->url}}" target="_blank">{{$voucher->text_button}}</a>
+                        @if ($voucher->text_button == 'Llamar')
+                            <a class="btn btn-secondary block" href="tel:{{$voucher->url}}" target="_blank">{{$voucher->text_button}}</a>
+                        @else
+                            <a class="btn btn-secondary block" href="{{$voucher->url}}" target="_blank">{{$voucher->text_button}}</a>
+                        @endif        
                     @else
                         <a class="btn btn-secondary block" href="{{route('session.index')}}">{{$voucher->text_button}}</a>
                     @endif

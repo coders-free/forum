@@ -22,12 +22,12 @@
         <div class="container"><h2 style="color:#2b3e7f">Estimado(a) {{session('customer')->name}}</h2></div>
       </div>
     <div class="container">
-      <div class="container"><h2 style="color:#2b3e7f">{{$code->voucher->title}}</h2></div>
+      <div class="container"><h2 style="color:#2b3e7f">{!! $code->voucher->title !!}</h2></div>
       <div class="container"><h3 style="color:#2b3e7f">Beneficio valido hasta: {{$code->voucher->expiration_date->format('d/m/Y')}}</h3></div>
     </div>
     <div class="container">
       <div class="container"><h2 style="color:#0094d5">¿CÓMO PUEDES DISFRUTARLO?</h2></div>
-      <div class="container"><h3 style="color:#2b3e7f">{{$code->voucher->description2}}</h3></div>
+      <div class="container"><h3 style="color:#2b3e7f"> {!! $code->voucher->description2 !!}</h3></div>
     </div>
     <div class="container">
       <div class="container"><h2 style="color:#0094d5">Código a canjear</h2></div>

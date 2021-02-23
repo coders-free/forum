@@ -19,11 +19,13 @@ class DashboardController extends Controller
 
     public function dashboard(){
 
-        $codes = Code::whereDate('created_at', '=', Carbon::now())->count(); 
+        $codes = Code::count(); 
+        $cupones_asignados_totales = CuponAsignado::count();
+        $cupones_disponibles = $codes - $cupones_asignados_totales;
         $cupones_asignados = CuponAsignado::whereDate('created_at', Carbon::now())->count();
         $inicios_de_sesion = VoucherTrack::where('modulo', 'INICIO_SESION')->whereDate('created_at', Carbon::now())->count();
         $beneficios_open = VoucherTrack::where('modulo', 'BENEFICIOS')->whereDate('created_at', Carbon::now())->count();
         //return $cupones_asignados;
-        return view('dashboard', compact('codes', 'cupones_asignados', 'inicios_de_sesion', 'beneficios_open'));
+        return view('dashboard', compact('codes', 'cupones_asignados', 'inicios_de_sesion', 'beneficios_open', 'cupones_disponibles'));
     }
 }
