@@ -1,4 +1,6 @@
-<?php use App\Http\Controllers\VoucherController; ?>
+<?php 
+//Llamando al Contreller
+use App\Http\Controllers\VoucherController; ?>
 <x-forum-layout>
     
     <section class="bg-primary relative">
