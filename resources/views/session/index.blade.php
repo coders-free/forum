@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         <!-- Favicon -->
-        <link rel="icon" href="{{asset('img/favicon.png')}}" sizes="125x88" />
+        <link rel="icon" href="{{asset('img/favicon.gif')}}" />
         
         {{-- Tailwind --}}
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -24,10 +24,10 @@
             }
         </style>
     </head>
-<body class="bg-cover bg-center h-screen py-8" style="background-image: url({{asset('img/women-5818607_1920.jpg')}})">
+<body class="bg-cover bg-center h-screen py-8" style="background-image: url({{asset('img/header-forum.png')}})">
     
     <div class="container mx-auto relative h-full flex items-center justify-center">
-        <img class="absolute left-0 top-0 h-24" src="{{asset('img/logo_principal.jpeg')}}">
+        <img class="absolute left-0 top-0 h-24" src="{{asset('img/LOGO-KM-FORUM.png')}}">
 
         <article class="w-96 bg-white bg-opacity-50">
             <header class="bg-primary py-2">
@@ -50,9 +50,9 @@
                     <div class="flex justify-center mt-3">
                         <button class="btn btn-secondary" type="submit">Iniciar sesión</button>
                     </div>
-                    <div class="flex justify-center mt-3">
+                    {{-- <div class="flex justify-center mt-3">
                         <a href="/" class="btn btn-secondary">Volver</a>
-                    </div>
+                    </div> --}}
 
                 </form>
             </div>

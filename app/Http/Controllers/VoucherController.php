@@ -27,6 +27,26 @@ class VoucherController extends Controller
         return view('vouchers.show', compact('voucher'));
     }
 
+    public static function clicLlamar(Voucher $voucher){
+        VoucherTrack::create([
+            'id_cliente'    => session('customer')->id_cliente,
+            'rut'           =>  session('customer')->rut,
+            'accion'        => 'CLIC',
+            'modulo'        => 'LLAMAR',
+            'fecha_track'   => Carbon::now()->format('d-m-Y')
+        ]);
+    }
+
+    public static function clicBoton(Voucher $voucher){
+        VoucherTrack::create([
+            'id_cliente'    => session('customer')->id_cliente,
+            'rut'           =>  session('customer')->rut,
+            'accion'        => 'CLIC',
+            'modulo'        => strtoupper($voucher->text_button),
+            'fecha_track'   => Carbon::now()->format('d-m-Y')
+        ]);
+    }    
+
     public function exchange(Voucher $voucher){
 
         foreach ($voucher->codes as $code) {

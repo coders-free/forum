@@ -1,4 +1,6 @@
+<?php use App\Http\Controllers\VoucherController; ?>
 <x-forum-layout>
+    
     <section class="bg-primary relative">
         
         <div class="md:absolute md:w-1/2 h-64">
@@ -45,9 +47,9 @@
 
                     @if (session('customer'))
                         @if ($voucher->text_button == 'Llamar')
-                            <a class="btn btn-secondary block" href="tel:{{$voucher->url}}" target="_blank">{{$voucher->text_button}}</a>
+                            <a class="btn btn-secondary block" href="tel:{{$voucher->url}}" onclick = "{{VoucherController::clicLlamar($voucher)}}" target="_blank">{{$voucher->text_button}}</a>
                         @else
-                            <a class="btn btn-secondary block" href="{{$voucher->url}}" target="_blank">{{$voucher->text_button}}</a>
+                            <a class="btn btn-secondary block" href="{{$voucher->url}}" onclick = "{{VoucherController::clicBoton($voucher)}}" target="_blank">{{$voucher->text_button}}</a>
                         @endif        
                     @else
                         <a class="btn btn-secondary block" href="{{route('session.index')}}">{{$voucher->text_button}}</a>

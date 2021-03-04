@@ -57,7 +57,7 @@ class Kernel extends ConsoleKernel
             //Exportar
             Excel::store(new VoucherTrackExport, 'GENERADOS_PLATAFORMA/TRACK_SITIO_' . Carbon::now()->format('Ymd') . '.csv', 'ftp');
             Excel::store(new CuponAsignadoExport, 'GENERADOS_PLATAFORMA/FORUM_CUPON_ASIGNADO_' . Carbon::now()->format('Ymd') . '.csv', 'ftp');
-        })->daily();
+        });
 
         // $schedule->command('inspire')->hourly();
     }

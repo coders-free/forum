@@ -2,7 +2,7 @@
     <div class="container h-20 flex items-center">
 
         <a href="/">
-            <img class="h-16 mr-3" src="{{asset('img/logo_principal.jpeg')}}">
+            <img class="h-16 mr-3" src="{{asset('img/LOGO-KM-FORUM.png')}}">
         </a>
 
         <div class="flex-1 relative">
