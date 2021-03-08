@@ -73,6 +73,7 @@ class BeneficiosComponent extends Component
 
 
     public function favorites(Voucher $voucher){
+        
         if ($voucher->check) {
             $voucher->customers()->detach(session('customer')->id);
         }else{

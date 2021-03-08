@@ -55,7 +55,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             @forelse ($vouchers as $voucher)
                 <article class="rounded overflow-hidden shadow-lg flex flex-col bg-white relative">
-
+                    
                     {{-- Cabecera --}}
                     <div class="bg-primary px-6 py-2 flex justify-between items-center">
                         <h2 class="text-white uppercase font-bold">{{$voucher->brand->name}}</h2>
@@ -63,9 +63,9 @@
                         @if (session('customer'))
                         
                             @if ($voucher->check)
-                                <i wire:click="favorites({{$voucher}})" class="fas fa-star text-yellow-400 cursor-pointer"></i>
+                                <i wire:click="favorites('{{$voucher->slug}}')" class="fas fa-star text-yellow-400 cursor-pointer"></i>
                             @else
-                                <i wire:click="favorites({{$voucher}})" class="fas fa-star text-white cursor-pointer"></i>
+                                <i wire:click="favorites('{{$voucher->slug}}')" class="fas fa-star text-white cursor-pointer"></i>
                             @endif
 
                         @else
