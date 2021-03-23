@@ -47,7 +47,6 @@
                     @if (session('customer'))
 
                         @livewire('click-button', ['voucher' => $voucher])
-
                           
                     @else
                         <a class="btn btn-secondary block" href="{{route('session.index')}}">{{$voucher->text_button}}</a>
