@@ -11,7 +11,6 @@ class ClickButton extends Component
 {
 
     public $voucher;
-    protected $listeners = ['clicLlamar', 'clicBoton'];
 
     public function mount(Voucher $voucher){
         $this->voucher = $voucher;
