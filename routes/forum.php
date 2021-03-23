@@ -21,12 +21,12 @@ Route::get('ftp', function () {
         Maatwebsite\Excel\Facades\Excel::import(new App\Imports\BrandImport, 'GENERADOS_DD/FORUM_CUPON_' . Illuminate\Support\Carbon::now()->format('Ymd') . '.csv', 'ftp');
         Maatwebsite\Excel\Facades\Excel::import(new App\Imports\VoucherImport, 'GENERADOS_DD/FORUM_CUPON_' . Illuminate\Support\Carbon::now()->format('Ymd') . '.csv', 'ftp');
         Maatwebsite\Excel\Facades\Excel::import(new App\Imports\CodeImport, 'GENERADOS_DD/FORUM_CUPON_' . Illuminate\Support\Carbon::now()->format('Ymd') . '.csv', 'ftp');
-
-        //Maatwebsite\Excel\Facades\Excel::import(new App\Imports\BrandImport, 'GENERADOS_DD/FORUM_CUPON_20210218' . '.csv', 'ftp');
-        //Maatwebsite\Excel\Facades\Excel::import(new App\Imports\VoucherImport, 'GENERADOS_DD/FORUM_CUPON_20210218' . '.csv', 'ftp');
-        //Maatwebsite\Excel\Facades\Excel::import(new App\Imports\CodeImport, 'GENERADOS_DD/FORUM_CUPON_20210218' . '.csv', 'ftp');
+        
     }
 
+    /* Maatwebsite\Excel\Facades\Excel::import(new App\Imports\BrandImport, 'GENERADOS_DD/FORUM_CUPON_20210218' . '.csv', 'ftp');
+    Maatwebsite\Excel\Facades\Excel::import(new App\Imports\VoucherImport, 'GENERADOS_DD/FORUM_CUPON_20210218' . '.csv', 'ftp');
+    Maatwebsite\Excel\Facades\Excel::import(new App\Imports\CodeImport, 'GENERADOS_DD/FORUM_CUPON_20210218' . '.csv', 'ftp'); */
 
     return "Datos cargados con éxito";
 });

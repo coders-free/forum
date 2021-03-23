@@ -1,6 +1,3 @@
-<?php 
-//Llamando al Contreller
-use App\Http\Controllers\VoucherController; ?>
 <x-forum-layout>
     
     <section class="bg-primary relative">
@@ -48,11 +45,10 @@ use App\Http\Controllers\VoucherController; ?>
                 @if ($voucher->url)
 
                     @if (session('customer'))
-                        @if ($voucher->text_button == 'Llamar')
-                            <a class="btn btn-secondary block" href="tel:{{$voucher->url}}" onclick = "{{VoucherController::clicLlamar($voucher)}}" target="_blank">{{$voucher->text_button}}</a>
-                        @else
-                            <a class="btn btn-secondary block" href="{{$voucher->url}}" onclick = "{{VoucherController::clicBoton($voucher)}}" target="_blank">{{$voucher->text_button}}</a>
-                        @endif        
+
+                        @livewire('click-button', ['voucher' => $voucher])
+
+                          
                     @else
                         <a class="btn btn-secondary block" href="{{route('session.index')}}">{{$voucher->text_button}}</a>
                     @endif
